@@ -12,7 +12,7 @@
     "templates"
   ],
   "scripts": {
-    "_prepublishOnly": "npm-run-all clean build update-version push",
+    "release": "npm-run-all clean build update-version push",
     "update-version": "standard-version",
     "push": "git push --follow-tags origin main",
     "clean": "rimraf \"*.d.ts\" \"*.js\"",
