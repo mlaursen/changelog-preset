@@ -4,7 +4,7 @@
   "description": "This is a custom standard-changelog preset that is based off of the angular preset that logs a bit more in the changelog.",
   "main": "index.js",
   "repository": "https://github.com/mlaursen/changelog-preset.git",
-  "author": "Mikkel Laursen <malursen03@gmail.com>",
+  "author": "Mikkel Laursen <mlaursen03@gmail.com>",
   "license": "MIT",
   "files": [
     "*.js",
