@@ -20,6 +20,17 @@ The default behavior of this template will:
   6. `Other Internal Changes`
   7. If none match, alpha-numeric sort by title.
 
+## Examples
+
+- this repo
+  - [CHANGELOG.md](./CHANGELOG.md)
+- [react-md](https://github.com/mlaursen/react-md)
+  - https://github.com/mlaursen/react-md/tree/main/CHANGELOG.md
+  - https://github.com/mlaursen/react-md/tree/main/changelog.config.js
+- [@mlaursen/eslint-config](https://github.com/mlaursen/eslint-config)
+  - https://github.com/mlaursen/eslint-config/tree/main/CHANGELOG.md
+  - https://github.com/mlaursen/eslint-config/tree/main/changelog.config.js
+
 ## Configuration
 
 The behavior can be configured by creating a `changelog.config.js` at the root of your git repo.
