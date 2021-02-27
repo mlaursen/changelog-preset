@@ -1,6 +1,6 @@
 {
   "name": "@mlaursen/changelog-preset",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "This is a custom standard-changelog preset that is based off of the angular preset that logs a bit more in the changelog.",
   "main": "index.js",
   "repository": "https://github.com/mlaursen/changelog-preset.git",
