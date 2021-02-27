@@ -16,6 +16,14 @@ const {
   commitGroupsSort,
 } = getConfig();
 
+function isScopeIgnored(scope: string): boolean {
+  if (typeof ignoreDeps === "boolean") {
+    return ignoreDeps;
+  }
+
+  return scope !== ignoreDeps;
+}
+
 const parserOpts: ParserOptions = {
   headerPattern: /^(\w*)(?:\((.*)\))?: (.*)$/,
   headerCorrespondence: ["type", "scope", "subject"],
@@ -40,10 +48,7 @@ const writerOpts: WriterOptions = {
 
     commit.type = getCommitType(commit);
     commit.scope = getCommitScope(commit);
-    if (
-      !isBreaking &&
-      (!commit.type || (ignoreDeps && commit.scope.includes("deps")))
-    ) {
+    if (!isBreaking && (!commit.type || isScopeIgnored(commit.scope || ""))) {
       // don't include un-typed commits in changelogs or deps
       return false;
     }

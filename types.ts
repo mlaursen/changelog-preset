@@ -42,9 +42,28 @@ export interface Configuration {
    * also be set to `false` if the package is something like an eslint config
    * that showing dependency updates matters.
    *
+   * When this is `"deps"` or `"dev-deps"`, only the other type will be allowed.
+   *
+   * @example
+   * Using "dev-deps"
+   * ```
+   * commits:
+   *
+   * chore(dev-deps): updated eslint from v0.0.1 to v0.0.2
+   * chore(deps): updated typescript from v0.0.1 to v0.0.2
+   *
+   *
+   * Changelog would include:
+   *
+   * ### Dependencies
+   *
+   * - chore(deps): updated typescript from v0.0.1 to v0.0.2
+   * ```
+   *
+   * @remarks \@since 1.1.0 added support for `"deps"` and `"dev-deps"`
    * @defaultValue `true`
    */
-  ignoreDeps?: boolean;
+  ignoreDeps?: boolean | "deps" | "dev-deps";
 
   /**
    * An optional function to transform the commit type into something else.

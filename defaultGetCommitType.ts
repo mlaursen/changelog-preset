@@ -5,6 +5,10 @@ export function defaultGetCommitType({ type, scope, revert }: Commit): string {
     return "Reverts";
   }
 
+  if (scope === "deps" || scope === "dev-deps") {
+    return "Dependencies";
+  }
+
   switch (scope) {
     case "feat":
       return "Features";

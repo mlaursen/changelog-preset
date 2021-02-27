@@ -51,7 +51,16 @@ export function getConfig(): RequiredConfiguration {
         tokenizer = identity;
       }
 
-      if (typeof ignoreDeps !== "boolean") {
+      if (typeof ignoreDeps === "string") {
+        if (ignoreDeps !== "deps" && ignoreDeps !== "dev-deps") {
+          console.warn(
+            `\`ignoreDeps\` must be a boolean, "deps", or "dev-deps" but got "${ignoreDeps}".`
+          );
+          console.warn("Defaulting to `true`.");
+
+          ignoreDeps = true;
+        }
+      } else if (typeof ignoreDeps !== "boolean") {
         if (DEBUG) {
           console.debug("Defaulting to ignoring dependency changes");
         }
