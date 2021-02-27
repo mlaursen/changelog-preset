@@ -1,10 +1,12 @@
+import { Tokenizer } from "./types";
+
 export const identity = <T>(thing: T): T => thing;
 
 /**
  * the default behavior is to replace all "tokens" to be inline code blocks. If
  * there are no provided "tokens", no replacements occur.
  */
-export function createTokenizer(tokens: readonly string[]) {
+export function createTokenizer(tokens: readonly string[]): Tokenizer {
   if (!tokens.length) {
     return identity;
   }

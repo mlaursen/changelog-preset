@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable @typescript-eslint/no-var-requires */
 import { execSync } from "child_process";
 import { existsSync } from "fs";
 import { join } from "path";

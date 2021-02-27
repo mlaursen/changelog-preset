@@ -28,7 +28,7 @@ const writerOpts: WriterOptions = {
   transform: (commit, context) => {
     // don't want to show the release tag in changelog
     if (commit.scope === "release") {
-      return undefined as any;
+      return false;
     }
 
     const issues: string[] = [];
@@ -45,7 +45,7 @@ const writerOpts: WriterOptions = {
       (!commit.type || (ignoreDeps && commit.scope.includes("deps")))
     ) {
       // don't include un-typed commits in changelogs or deps
-      return undefined as any;
+      return false;
     }
 
     if (typeof commit.hash === "string") {

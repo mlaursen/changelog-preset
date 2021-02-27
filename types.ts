@@ -3,6 +3,8 @@ import { Options, CommitGroup } from "conventional-changelog-writer";
 
 export type CommitGroupsSort = Options.Sort<CommitGroup>;
 
+export type Tokenizer = (subject: string) => string;
+
 export interface Configuration {
   /**
    * An optional list of "tokens" that will be wrapped with inline code bocks
@@ -14,14 +16,14 @@ export interface Configuration {
    * const tokens = ['react', 'react-dom', 'husky', 'lint-staged', 'SpecificName'];
    * ```
    *
-   * @default []
+   * @defaultValue []
    */
   tokens?: readonly string[];
 
   /**
    * An optional function that will "tokenize" or change the commit message
    * that's displayed in the CHANGELOG. The default behavior will wrap any
-   * `tokens` found with inline code blocks "``".
+   * `tokens` found with inline code blocks "\`\`".
    *
    * Default Example:
    *
@@ -32,7 +34,7 @@ export interface Configuration {
    * tokenizer(subject); // "Added a new `createTokenizer` util"
    * ```
    */
-  tokenizer?(subject: string): string;
+  tokenizer?: Tokenizer;
 
   /**
    * Boolean if any commits that have a scope of `deps` or `dev-deps` should be
@@ -40,7 +42,7 @@ export interface Configuration {
    * also be set to `false` if the package is something like an eslint config
    * that showing dependency updates matters.
    *
-   * @default true
+   * @defaultValue `true`
    */
   ignoreDeps?: boolean;
 
@@ -51,12 +53,14 @@ export interface Configuration {
    *
    * The default behavior will convert:
    *
-   * - `feat` -> `Features`
-   * - `fix` -> `Bug Fixes`
-   * - `perf` -> `Performance Improvements`
-   * - `docs` -> `Documentation`
-   * - `revert` -> `Reverts` (or if commit message has `revert`)
-   * - everything else -> `Other Internal Changes`
+   * ```
+   * - feat -> Features
+   * - fix -> Bug Fixes
+   * - perf -> Performance Improvements
+   * - docs -> Documentation
+   * - revert -> Reverts (or if commit message has revert)
+   * - everything else -> Other Internal Changes
+   * ```
    */
   getCommitType?(commit: Commit): string;
 

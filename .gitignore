@@ -10,3 +10,4 @@ node_modules/
 *.d.ts
 
 !.versionrc.js
+!.eslintrc.js
