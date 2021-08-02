@@ -122,9 +122,9 @@
     fastq "^1.6.0"
 
 "@types/conventional-changelog-core@*", "@types/conventional-changelog-core@^4.1.1":
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/@types/conventional-changelog-core/-/conventional-changelog-core-4.1.1.tgz#30f3258881075e5ec4b4ac8e3e30d006f0693168"
-  integrity sha512-eIUsocsEtwiQB1vau0UPzuqzWERyrHzaSkUsK+kbnUkYtOM8hlFrJI+UZFxXTKU6CLR/FGsSeGPww8zgAO9WvA==
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/@types/conventional-changelog-core/-/conventional-changelog-core-4.1.2.tgz#ecade56705a8cb75431241172ca4654faf2bf79b"
+  integrity sha512-1V1QuKh5M3xAvZxCV+0AUPGnkMkbyU/tQcA1/EBR4ELdWBEZZ9Im5l2ADcTXeAvY1nbJmr8zRn5IVl1TVutwZA==
   dependencies:
     "@types/conventional-changelog-writer" "*"
     "@types/conventional-commits-parser" "*"
