@@ -11,3 +11,5 @@ node_modules/
 
 !.versionrc.js
 !.eslintrc.js
+
+.DS_Store
